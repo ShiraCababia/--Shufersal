@@ -7,8 +7,6 @@ const products = [{ prodID: 1, prodName: "עגבניות", prodCost: 9.90, prodI
 const maxQuantity = 100;
 const minQuantity = 1;
 
-// אם הסיר את כל המוצרים, להוסיף טקסט חמוד במקום
-
 function createProductElement(product) {
     return `
         <div class="product" id=${`product${product.prodID}`}>
@@ -110,16 +108,12 @@ function toastNewProduct(prodId) {
     Toastify({
         text: `${prodName}: ${prodQuantity} יחידות. סה"כ בשקלים: ₪${sumPrice.toFixed(2)}`,
         duration: 3000,
-        // destination: "https://github.com/apvarun/toastify-js",
-        // newWindow: true,
-        // close: true,
         gravity: "top", // `top` or `bottom`
         position: "left", // `left`, `center` or `right`
         stopOnFocus: true, // Prevents dismissing of toast on hover
         style: {
             background: "linear-gradient(to right, #00b09b, #96c93d)",
-        },
-        onClick: function () { } // Callback after click
+        }
     }).showToast();
 }
 
@@ -127,13 +121,12 @@ function showMinQuantityToaster() {
     Toastify({
         text: `הכמות המינימלית בקניה היא: ${minQuantity} יח'.`,
         duration: 3000,
-        gravity: "bottom", // `top` or `bottom`
-        position: "left", // `left`, `center` or `right`
-        stopOnFocus: true, // Prevents dismissing of toast on hover
+        gravity: "bottom",
+        position: "left",
+        stopOnFocus: true,
         style: {
             background: "linear-gradient(to right, red, #df8c8c)",
-        },
-        onClick: function () { } // Callback after click
+        }
     }).showToast();
 }
 
@@ -141,12 +134,11 @@ function showMaxQuantityToaster() {
     Toastify({
         text: `הכמות המקסימלית בקניה היא: ${maxQuantity} יח'.`,
         duration: 3000,
-        gravity: "bottom", // `top` or `bottom`
-        position: "left", // `left`, `center` or `right`
-        stopOnFocus: true, // Prevents dismissing of toast on hover
+        gravity: "bottom",
+        position: "left",
+        stopOnFocus: true,
         style: {
             background: "linear-gradient(to right, red, #df8c8c)",
-        },
-        onClick: function () { } // Callback after click
+        }
     }).showToast();
 }
